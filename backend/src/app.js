@@ -4,9 +4,8 @@ const app = express();
 
 app.use(express.json());
 
-app.get("/health", (req, res) => {
-  res.json({ status: "ok" });
+app.get("/", (req, res) => {
+  res.json({ message: "Welcome to KingoGM backend server!" });
 });
 
 export default app;
-
