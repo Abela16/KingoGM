@@ -4,8 +4,7 @@
   "private": true,
   "description": "Gym management system monorepo",
   "scripts": {
-    "dev:frontend": "npm --prefix frontend run dev",
+    "dev:frontend": "npm --prefix client run dev",
     "dev:backend": "npm --prefix backend run dev"
   }
 }
-

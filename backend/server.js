@@ -9,6 +9,6 @@ const port = process.env.PORT || 5000;
 connectDB();
 
 app.listen(port, () => {
-  console.log(`KingoGM backend server is running`);
+  console.log(`KingoGM backend server is running on port ${port}`);
 });
 
