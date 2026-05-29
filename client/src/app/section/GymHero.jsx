@@ -1,5 +1,6 @@
 "use client";
 
+import { slides } from "../data/slidesImage";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import {
@@ -12,36 +13,6 @@ import {
   X,
 } from "lucide-react";
 
-const slides = [
-  {
-    id: "01",
-    title: "BE STRONGER THAN YOUR EXCUSES",
-    accent: "EXCUSES",
-    image:
-      "https://images.unsplash.com/photo-1534367610401-9f5ed68180aa?auto=format&fit=crop&w=1800&q=85",
-  },
-  {
-    id: "02",
-    title: "TRAIN HARDER MOVE BETTER",
-    accent: "BETTER",
-    image:
-      "https://images.unsplash.com/photo-1548690312-e3b507d8c110?auto=format&fit=crop&w=1800&q=85",
-  },
-  {
-    id: "03",
-    title: "OWN EVERY REP TODAY",
-    accent: "TODAY",
-    image:
-      "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1800&q=85",
-  },
-  {
-    id: "04",
-    title: "BUILD POWER WITH PURPOSE",
-    accent: "PURPOSE",
-    image:
-      "https://images.unsplash.com/photo-1593079831268-3381b0db4a77?auto=format&fit=crop&w=1800&q=85",
-  },
-];
 
 const navItems = ["Home", "About", "Services", "Trainers", "Contact"];
 
@@ -251,7 +222,7 @@ export default function GymHero() {
             </motion.p>
             <motion.h1
               key={currentSlide.title}
-              className="max-w-3xl text-5xl font-black uppercase leading-[0.94] text-white drop-shadow-2xl sm:text-7xl lg:text-8xl"
+              className="max-w-3xl text-3xl font-black uppercase leading-[0.94] text-white drop-shadow-2xl sm:text-5xl lg:text-6xl"
               initial={{ opacity: 0, y: 32 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
