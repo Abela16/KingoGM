@@ -1,43 +1,19 @@
 "use client";
 
+import { featureItems } from "../data/featureItems";
 import { slides } from "../data/slidesImage";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import {
-  ChartNoAxesColumnIncreasing,
   Crown,
   Dumbbell,
   Menu,
-  UserRoundSearch,
-  UsersRound,
   X,
 } from "lucide-react";
 
 
 const navItems = ["Home", "About", "Services", "Trainers", "Contact"];
 
-const featureItems = [
-  {
-    title: "Premium Equipment",
-    text: "Top-quality machines for maximum results.",
-    icon: Dumbbell,
-  },
-  {
-    title: "Expert Trainers",
-    text: "Certified professionals guiding your journey.",
-    icon: UserRoundSearch,
-  },
-  {
-    title: "Proven Results",
-    text: "Programs designed to help you succeed.",
-    icon: ChartNoAxesColumnIncreasing,
-  },
-  {
-    title: "Strong Community",
-    text: "Train together. Grow together.",
-    icon: UsersRound,
-  },
-];
 
 const socialLinks = [
   {
@@ -140,7 +116,7 @@ export default function GymHero() {
                 <a
                   key={item}
                   href={`#${item.toLowerCase()}`}
-                  className="text-sm font-semibold text-white/82 transition hover:text-[#dfb866]"
+                  className="text-sm font-semibold text-white/82 transition hover:text-[#FF0000]"
                 >
                   {item}
                 </a>
@@ -150,7 +126,7 @@ export default function GymHero() {
             <div className="flex items-center gap-3">
               <motion.a
                 href="#join"
-                className="hidden rounded border border-white/55 px-7 py-3 text-sm font-black uppercase tracking-normal transition hover:border-[#dfb866] hover:bg-[#dfb866] hover:text-black sm:inline-flex"
+                className="hidden rounded border border-white/55 px-7 py-3 text-sm font-black uppercase tracking-normal transition hover:border-[#FF0000] hover:bg-[#FF0000] hover:text-black sm:inline-flex"
                 initial={{ opacity: 0, x: 18 }}
                 animate={{ opacity: 1, x: 0 }}
                 whileHover={{ y: -2 }}
