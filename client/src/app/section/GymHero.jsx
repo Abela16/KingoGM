@@ -2,6 +2,7 @@
 
 import { featureItems } from "../data/featureItems";
 import { slides } from "../data/slidesImage";
+import AuthEntryModal from "@/components/AuthEntryModal";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import {
@@ -52,6 +53,7 @@ const fadeUp = {
 
 export default function GymHero() {
   const [activeSlide, setActiveSlide] = useState(0);
+  const [authOpen, setAuthOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -126,6 +128,18 @@ export default function GymHero() {
             <div className="flex items-center gap-3">
               <motion.a
                 href="#join"
+                className="hidden rounded border border-white/55 px-7 py-3 text-sm font-black uppercase tracking-normal transition bg-[#FF0000] hover:bg-white hover:text-black sm:inline-flex"
+                initial={{ opacity: 0, x: 18 }}
+                animate={{ opacity: 1, x: 0 }}
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ duration: 0.55 }}
+              >
+                Contact us
+              </motion.a>
+              <motion.button
+                type="button"
+                onClick={() => setAuthOpen(true)}
                 className="hidden rounded border border-white/55 px-7 py-3 text-sm font-black uppercase tracking-normal transition hover:border-[#FF0000] hover:bg-[#FF0000] hover:text-black sm:inline-flex"
                 initial={{ opacity: 0, x: 18 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -133,8 +147,8 @@ export default function GymHero() {
                 whileTap={{ scale: 0.98 }}
                 transition={{ duration: 0.55 }}
               >
-                Join Now
-              </motion.a>
+                Get Started
+              </motion.button>
               <button
                 type="button"
                 onClick={() => setMenuOpen((open) => !open)}
@@ -161,18 +175,21 @@ export default function GymHero() {
                       key={item}
                       href={`#${item.toLowerCase()}`}
                       onClick={() => setMenuOpen(false)}
-                      className="rounded px-2 py-3 text-sm font-semibold text-white/85 hover:bg-white/8"
+                      className="rounded px-2 py-3 text-sm font-semibold text-white/85 hover:bg-white/[0.08]"
                     >
                       {item}
                     </a>
                   ))}
-                  <a
-                    href="#join"
-                    onClick={() => setMenuOpen(false)}
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setMenuOpen(false);
+                      setAuthOpen(true);
+                    }}
                     className="mt-2 rounded bg-[#dfb866] px-4 py-3 text-center text-sm font-black uppercase text-black"
                   >
-                    Join Now
-                  </a>
+                    Get Started
+                  </button>
                 </div>
               </motion.div>
             )}
@@ -278,7 +295,7 @@ export default function GymHero() {
               key={social.label}
               href={social.href}
               aria-label={social.label}
-              className="grid size-9 place-items-center rounded-full border border-white/15 bg-white/8 transition hover:border-[#dfb866] hover:text-[#dfb866]"
+              className="grid size-9 place-items-center rounded-full border border-white/15 bg-white/[0.08] transition hover:border-[#dfb866] hover:text-[#dfb866]"
               whileHover={{ x: -3, scale: 1.08 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -288,6 +305,7 @@ export default function GymHero() {
         </div>
 
       </section>
+      <AuthEntryModal open={authOpen} onClose={() => setAuthOpen(false)} />
     </main>
   );
 }
