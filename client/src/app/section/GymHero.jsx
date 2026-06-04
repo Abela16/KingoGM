@@ -3,6 +3,7 @@
 import { featureItems } from "../data/featureItems";
 import { slides } from "../data/slidesImage";
 import AboutUsSection from "./AboutUsSection";
+import ServicesSection from "./ServicesSection";
 import AuthEntryModal from "@/components/AuthEntryModal";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -108,7 +109,7 @@ export default function GymHero() {
               transition={{ duration: 0.55 }}
             >
               <span className="relative grid size-9 place-items-center rounded border border-[#d9ad58]/50 bg-black/25">
-                <Crown className="absolute -top-3 size-5 fill-[#d9ad58] text-[#d9ad58]" />
+                <Crown className="absolute -top-3 size-5 fill-[#FF0000] text-[#FF0000]" />
                 <Dumbbell className="size-5 text-white" />
               </span>
               <span>KingoGM</span>
@@ -307,6 +308,7 @@ export default function GymHero() {
 
       </section>
       <AboutUsSection />
+      <ServicesSection />
       <AuthEntryModal open={authOpen} onClose={() => setAuthOpen(false)} />
     </main>
   );
