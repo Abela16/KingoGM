@@ -2,6 +2,7 @@
 
 import { featureItems } from "../data/featureItems";
 import { slides } from "../data/slidesImage";
+import AboutUsSection from "./AboutUsSection";
 import AuthEntryModal from "@/components/AuthEntryModal";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -305,6 +306,7 @@ export default function GymHero() {
         </div>
 
       </section>
+      <AboutUsSection />
       <AuthEntryModal open={authOpen} onClose={() => setAuthOpen(false)} />
     </main>
   );
