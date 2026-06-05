@@ -3,6 +3,7 @@
 import { featureItems } from "../data/featureItems";
 import { slides } from "../data/slidesImage";
 import AboutUsSection from "./AboutUsSection";
+import ContactUsSection from "./ContactUsSection";
 import MembershipPlansSection from "./MembershipPlansSection";
 import ServicesSection from "./ServicesSection";
 import AuthEntryModal from "@/components/AuthEntryModal";
@@ -311,6 +312,7 @@ export default function GymHero() {
       <AboutUsSection />
       <ServicesSection />
       <MembershipPlansSection />
+      <ContactUsSection />
       <AuthEntryModal open={authOpen} onClose={() => setAuthOpen(false)} />
     </main>
   );
