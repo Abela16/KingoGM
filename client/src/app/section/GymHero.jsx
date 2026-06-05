@@ -3,6 +3,7 @@
 import { featureItems } from "../data/featureItems";
 import { slides } from "../data/slidesImage";
 import AboutUsSection from "./AboutUsSection";
+import MembershipPlansSection from "./MembershipPlansSection";
 import ServicesSection from "./ServicesSection";
 import AuthEntryModal from "@/components/AuthEntryModal";
 import { AnimatePresence, motion } from "framer-motion";
@@ -15,7 +16,7 @@ import {
 } from "lucide-react";
 
 
-const navItems = ["Home", "About", "Services", "Trainers", "Contact"];
+const navItems = ["Home", "About", "Services", "Membership", "Contact"];
 
 
 const socialLinks = [
@@ -309,6 +310,7 @@ export default function GymHero() {
       </section>
       <AboutUsSection />
       <ServicesSection />
+      <MembershipPlansSection />
       <AuthEntryModal open={authOpen} onClose={() => setAuthOpen(false)} />
     </main>
   );

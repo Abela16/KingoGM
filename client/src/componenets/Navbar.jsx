@@ -1,4 +1,4 @@
 
 
 
-const navItems = ["Home", "About", "Services", "Trainers", "Contact"];
+const navItems = ["Home", "About", "Services", "Membership", "Contact"];
